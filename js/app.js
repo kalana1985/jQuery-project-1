@@ -1,45 +1,36 @@
-//problem:user when clicking on image going to the dead end resulting poor user experiance 
-//solution:creating a overlay with the large image-light-box
- var $overlay=$('<div id="overlay"></div>');
- var $image=$("<img>");
- var $caption=$("<p></p>");
+//Problem: User when clicking on image goes to a dead end
+//Solution: Create an overlay with the large image - Lightbox
 
+var $overlay = $('<div id="overlay"></div>');
+var $image = $("<img>");
+var $caption = $("<p></p>");
 
- $overlay.append($image);
+//An image to overlay
+$overlay.append($image);
 
- // Add a caption to overlay
+//A caption to overlay
+$overlay.append($caption);
 
-  $overlay.append($caption);
-
- //jQuery allowes you to create a its repersantation even tho the element isnt part of the DOM yet.
- //its common practies to use $ sign in jQuery oblects as $overLay variable.
-// Add overlay
+//Add overlay
 $("body").append($overlay);
-// An image
-   // A caption
 
-//1. Capture the link event on a link to am image
+//Capture the click event on a link to an image
 $("#imageGallery a").click(function(event){
   event.preventDefault();
-  var imageLocation=$(this).attr("href");
- 
+  var imageLocation = $(this).attr("href");
+  //Update overlay with the image linked in the link
+  $image.attr("src", imageLocation);
   
-  //1.2 update overlay with the image linked in the link
-  $image.attr("src",imageLocation);
-  //2. Show the overlay
+  //Show the overlay.
   $overlay.show();
-
-  //1.3 get child's alt attri and set caption
-  var captionText=$(this).children("img").attr("alt");
-  $caption.text(captionText)
-
+  
+  //Get child's alt attribute and set caption
+  var captionText = $(this).children("img").attr("alt");
+  $caption.text(captionText);
 });
- 
 
- // When overlay is clicked
-
- $overlay.click(function(){
- 	$(this).hide();
- });
-   // Hide overlay   
- 
+//When overlay is clicked
+$overlay.click(function(){
+  //Hide the overlay
+  $overlay.hide();
+});
