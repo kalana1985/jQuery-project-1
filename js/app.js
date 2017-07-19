@@ -5,7 +5,6 @@
 $("#imageGallery a").click(function(event){
   event.preventDefault();
   var x=$(this).attr("href");
-  console.log(x);
 
   //2. Show the overlay
   //1.2 update overlay with the image linked in the link
