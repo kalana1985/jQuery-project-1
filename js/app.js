@@ -25,4 +25,8 @@ $("#imageGallery a").click(function(event){
  
 
  // When overlay is clicked
+
+ $overlay.click(function(){
+ 	$(this).hide();
+ });
    // Hide overlay   
