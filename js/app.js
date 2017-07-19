@@ -42,3 +42,4 @@ $("#imageGallery a").click(function(event){
  	$(this).hide();
  });
    // Hide overlay   
+ 
