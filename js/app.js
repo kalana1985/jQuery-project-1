@@ -4,7 +4,7 @@
 //1. Create the link event on a link to am image
 $("#imageGallery a").click(function(event){
   event.preventDefault();
-  var x=$(this).attr("href");
+  $(this).attr("href");
 
   //2. Show the overlay
   //1.2 update overlay with the image linked in the link
